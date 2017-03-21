@@ -1,92 +1,121 @@
-.player, #defender, #enemy {
-	width: 200px;
-	font-weight: bold;
+
+body {
+	background: url("../images/alienWorld.jpg") no-repeat;
+	font-family: 'Prosto One', cursive;
 }
 
-#nonfightPlayers {
-	width: 100%;
-	height: 200px;
-	border: solid 4px white;
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+
+  25% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+h1 {
+	font-size: 62px;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	color: #00b139;
+	text-align: center;
+    animation: scale 6s ease-out normal;
 }
 
 .player > .stats {
 	position: absolute;
-	bottom: 2px;
+	bottom: -42px;
 	left: 15px;
-	background-color: green;
-	width: 200px;
-	padding-left: 5px;
-	padding-top: 8px;
+	background-color: #8BFFD1;
+	width: 150px;
+	padding-left: 45px;
+	padding-top: 12px;
+	line-height: 8px;
+	font-weight: bold;
 }
 
 #messageRow {
 	text-align: center;
 	font-weight: bold;
-	border: solid 2px black;
 	height: 90px;
 	font-size: 25px;
 	padding-top: 28px;
-	margin-bottom: 34px;
+	color: #FFE96A;
+	line-height: 2px;
+	margin-top: 50px;
 }
 
-#fightLabels {
+button {
+	color: black;
+	background-color: #1E91D6;
+	font-size: 19px;
+	margin: 20px auto 0 auto;
+	padding: 12px;
+	font-weight: bold;
+	line-height: 2px;
+}
+
+#battleLabels {
 	font-weight: bold;
 	font-size: 25px;
+	color: #00b139;
+	text-align: center;
 }
 
-#fightArea {
-	height: 200px;
+#dance {
+	margin-top: 70px;
 }
 
-#userChar > .stats {
-	position: absolute;
-	bottom: 2px;
-	left: 15px;
-	background-color: blue;
-	width: 200px;
-	padding-left: 5px;
-	padding-top: 8px;
-}
-
-#enemy > .stats {
-	position: absolute;
-	bottom: 2px;
-	left: 15px;
-	background-color: red;
-	width: 200px;
-	padding-left: 5px;
-	padding-top: 8px;
+.danceDiv {
+	text-align: center;
 }
 
 #player1 {
-	background: url("../images/redCar.png") no-repeat;
-	background-size: contain;
-	margin-top: 35px;
-	height: 128px;
+	margin-top: 20px;
 }
 
-img {
-	height: 128px;
-	width: 200px;
+#playerImg1 {
+	height: 150px;
 }
 
 #player2 {
-	background: url("../images/greenCar.png") no-repeat;
-	background-size: contain;
-	margin-top: 29px;
-	height: 134px;
+	margin-top: 40px;
+}
+
+#playerImg2 {
+	height: 130px;
 }
 
 #player3 {
-	background: url("../images/blueCar.png") no-repeat;
-	background-size: contain;
-	margin-top: 9px;
-	height: 154px;
+	margin-top: 50px;
 }
 
-#player4 {
-	background: url("../images/yellowCar.png") no-repeat;
-	background-size: contain;
-	height: 163px;
+#playerImg3 {
+	height: 120px;
+}
+
+#playerImg4 {
+	height: 170px;
+}
+
+/*prevents collapse when enemies all chosen*/
+#nonbattlePlayers {
+	height: 170px;
+}
+
+footer {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	color: white;
 }
 	
