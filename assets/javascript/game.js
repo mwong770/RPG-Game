@@ -120,7 +120,7 @@ var still = "";
 //function to animate Gif if still and to still image if animated - to be used when click dance
 function animateGif(playerImg) {
 
-	if (enemy == true && userChar == true && userCharHP !== 0) {
+	if (enemy == true && userChar == true && userCharHP > 0) {
 		state = $(playerImg).find("img").attr("data-state");
 		animate = $(playerImg).find("img").attr("data-animate");
 		still = $(playerImg).find("img").attr("data-still");
@@ -190,13 +190,17 @@ function play() {
 //occur after animateGif function complete
 $("#dance").on('click', function () {
 
-	animateGif(userChosen);
-	animateGif(enemyChosen);
+	if (enemy == true && userChar == true && userCharHP > 0) {
 
-	setTimeout(animateGif, 1600, userChosen);
-	setTimeout(animateGif, 1600, enemyChosen);
+		animateGif(userChosen);
+		animateGif(enemyChosen);
 
-	setTimeout(play, 1800);
+		setTimeout(animateGif, 1600, userChosen);
+		setTimeout(animateGif, 1600, enemyChosen);
+
+		setTimeout(play, 1800);
+
+	}
 
 });
 
