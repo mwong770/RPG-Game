@@ -188,11 +188,15 @@ function game() {
 		$(userChosen).find('.HP').html(userCharHP);
 		$(enemyChosen).find('.HP').html(enemyHP);
 
-		if (userCharHP <= 0) {
+		if (userCharHP <= 0 && enemyHP <= 0) {
+			$("#message").html("You both lost. Please press reset to play again");
+		}
+
+		if (userCharHP <= 0 && enemyHP > 0) {
 			$("#message").html("You lost. Please press reset to play again.");
 		}
 	
-		if (enemyHP <= 0) {
+		if (userCharHP > 0 && enemyHP <= 0) {
   		
   			$(enemyChosen).find('.HP').html(originalEnemyHP);
   		
@@ -209,27 +213,30 @@ function game() {
 	
 			enemy = false;
 
-		} //ends if enemyHP <=0
+		} //ends if enemyHP <=0 .....
 	} //ends if enemy == true .... 
 } //ends game function
 
 //animates images and plays music when click dance for 1.6s, then stills image and stops music
-//game function delayed so calculations and replacePlayer 
-//occur after animateGif function complete
+//game function delayed so calculations and replacePlayer occur after animateGif function complete
 $("#dance").on('click', function () {
 
 	if (enemy == true && userChar == true && userCharHP > 0  && state == "still") {
 
 		animateGif(userChosen);
 		animateGif(enemyChosen);
-
-		var index = document.getElementById("audio"); 
-        index.loop = true;
-        index.play(); 
+		
+		var music = document.getElementById("audio");
+        music.loop = true; 
+        music.play(); 
+		
+        function stopMusic() {
+    		music.pause();
+		}
 
 		setTimeout(animateGif, 1600, userChosen);
 		setTimeout(animateGif, 1600, enemyChosen);
-
+		setTimeout(stopMusic, 1600);
 		setTimeout(game, 1600);
 
 	} //ends if enemy == true .....
@@ -241,8 +248,7 @@ $("#dance").on('click', function () {
 
 
 
-assets
-index.html
+
 
 
 
