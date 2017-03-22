@@ -32,57 +32,35 @@ body {
 h1 {
 	font-size: 62px;
 	margin-top: 10px;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	color: #00b139;
 	text-align: center;
     animation: scale 6s ease-out normal;
 }
 
+#remainingOpponentsLabel {
+	text-align: center;
+	font-size: 25px;
+	color: orange;
+}
+
+/*prevents collapse when enemies all chosen*/
+#nonbattlePlayers {
+	height: 220px;
+}
+
 .player > .stats {
-	position: absolute;
-	bottom: -42px;
-	left: 15px;
+	position: relative;
 	background-color: #8BFFD1;
 	width: 150px;
-	padding-left: 45px;
-	padding-top: 12px;
+	padding: 12px 0 1px 0;
+	text-align: center;
 	line-height: 8px;
 	font-weight: bold;
+	margin: 0 auto;
 }
 
-#messageRow {
-	text-align: center;
-	font-weight: bold;
-	height: 90px;
-	font-size: 25px;
-	padding-top: 28px;
-	color: #FFE96A;
-	line-height: 2px;
-	margin-top: 50px;
-}
-
-button {
-	color: black;
-	background-color: #1E91D6;
-	font-size: 19px;
-	margin: 20px auto 0 auto;
-	padding: 12px;
-	font-weight: bold;
-	line-height: 2px;
-}
-
-#battleLabels {
-	font-weight: bold;
-	font-size: 25px;
-	color: #00b139;
-	text-align: center;
-}
-
-#dance {
-	margin-top: 70px;
-}
-
-.danceDiv {
+.player {
 	text-align: center;
 }
 
@@ -114,9 +92,40 @@ button {
 	height: 170px;
 }
 
-/*prevents collapse when enemies all chosen*/
-#nonbattlePlayers {
-	height: 170px;
+#messageRow {
+	text-align: center;
+	font-weight: bold;
+	height: 90px;
+	font-size: 25px;
+	padding-top: 28px;
+	color: #FFE96A;
+	line-height: 25px;
+	margin-top: 30px;
+}
+
+button {
+	color: black;
+	background-color: #1E91D6;
+	font-size: 19px;
+	margin: 20px auto 0 auto;
+	padding: 12px;
+	font-weight: bold;
+	line-height: 2px;
+}
+
+#battleLabels {
+	font-weight: bold;
+	font-size: 25px;
+	color: #00b139;
+	text-align: center;
+}
+
+#dance {
+	margin-top: 70px;
+}
+
+.danceDiv {
+	text-align: center;
 }
 
 #battleGround {
@@ -140,20 +149,15 @@ footer {
 	h1 {
 		font-size: 62px;
 		margin-top: 10px;
-				margin-bottom: 25px;
+		margin-bottom: 25px;
 	}
 
 	.player > .stats {
-		left: 15px;
 		width: 150px;
-		padding-left: 45px;
-		line-height: 8px;
 	}
 
 	#messageRow {
-		height: 90px;
 		font-size: 25px;
-		line-height: 2px;
 		margin-top: 50px;
 		margin-bottom: 0;
 	}
@@ -199,16 +203,11 @@ footer {
 	}
 
 	.player > .stats {
-		left: 18px;
 		width: 140px;
-		padding-left: 40px;
-		line-height: 8px;
 	}
 
 	#messageRow {
-		height: 120px;
 		font-size: 21px;
-		line-height: 25px;
 		margin-top: 30px;
 		margin-bottom: 20px;
 	}
@@ -254,16 +253,11 @@ footer {
 	}
 
 	.player > .stats {
-		left: 18px;
 		width: 110px;
-		padding-left: 25px;
-		line-height: 6px;
 	}
 
 	#messageRow {
-		height: 150px;
 		font-size: 19px;
-		line-height: 25px;
 		margin-top: 0;
 	}
 
@@ -308,16 +302,11 @@ footer {
 	}
 
 	.player > .stats {
-		left: 18px;
 		width: 90px;
-		padding-left: 5px;
-		line-height: 6px;
 	}
 
 	#messageRow {
-		height: 150px;
 		font-size: 19px;
-		line-height: 25px;
 		margin-top: 0;
 	}
 
@@ -361,17 +350,17 @@ footer {
 		margin-bottom: 0;
 	}
 
+	#remainingOpponentsLabel {
+		font-size: 20px;
+	}
+
 	.player > .stats {
-		left: 10px;
 		width: 85px;
-		padding-left: 5px;
 		line-height: 6px;
 	}
 
 	#messageRow {
-		height: 150px;
 		font-size: 18px;
-		line-height: 25px;
 		margin-top: 0;
 	}
 
