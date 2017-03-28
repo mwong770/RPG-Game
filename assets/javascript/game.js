@@ -1,3 +1,8 @@
+//Future Modifications:
+//--make h1 scale each time press reset
+//--create array of various audio files and have music change randomly each time new battle begins or
+//at least after each reset
+//--find a variety of dance gifs of each alien so can alternate dance moves each time press dance
 
 //variables to capture userChar and enemy DMG and HP values for global use and to update
 var userCharDMG = 0;

@@ -4,7 +4,7 @@ html {
 	min-height: 100%;
 }
 
-/*margin 85 (height of footer) is step 2 of 3 to make sticky footer*/
+/*margin 10 (height of footer) is step 2 of 3 to make sticky footer*/
 body {
 	background: url("../images/alienWorld.jpg") no-repeat;
 	font-family: 'Prosto One', cursive;
