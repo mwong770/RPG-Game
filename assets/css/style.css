@@ -1,10 +1,9 @@
-/*step 1 of 3 to make sticky footer*/
+
 html {
 	position: relative;
 	min-height: 100%;
 }
 
-/*margin 10 (height of footer) is step 2 of 3 to make sticky footer*/
 body {
 	background: url("../images/alienWorld.jpg") no-repeat;
 	font-family: 'Prosto One', cursive;
@@ -132,7 +131,6 @@ button {
 	height: 170px;
 }
 
-/*position absolute/bottom 0/width 100% is step 3 of 3 to make sticky footer*/
 footer {
 	position: absolute;
 	height: 10px;
