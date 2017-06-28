@@ -170,7 +170,6 @@ $("#dance").on("click", function () {
 		setTimeout(animateGif, 1600, enemyChosen);
 		setTimeout(stopMusic, 1600);
 		setTimeout(game, 1600);
-
 	} 
 
 }); 
@@ -187,7 +186,8 @@ $(document).ready(function() {
 		if (enemy === false) {
 			
 			if (userChar === false) {
-				userChosen = $(this).find(".player").attr("id");
+				userChosen = $(this).find('.player');
+				// userChosen = $(this).find(".player").attr("id");
 				$("#userChar").html(userChosen);
 				userChar = true;
 
