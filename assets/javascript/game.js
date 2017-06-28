@@ -22,88 +22,12 @@ var originalEnemyHP = 0;
 var enemyChosenCount = 0;
 
 // counter to count how many enemies have lost to use for reset
-enemyLosses = 0;
+var enemyLosses = 0;
 
-// moves image, DMG and HP of player clicked to userChar or enemy location
-// gets DMG and HP values of player clicked and puts in userCharDMG and userCharHP to be modified during game 
-// puts in originalUserDMG and originalUserHP to retain original values for use during reset
-$(document).ready(function() {
-
-	$(".playerDiv").on("click", function () {
-		
-		$(this).hide();
-		
-		if (enemy === false) {
-			
-			if (userChar === false) {
-				userChosen = $(this).find(".player").attr("id");
-				$("#userChar").html(userChosen);
-				userChar = true;
-
-				originalUserDMG = $(userChosen).find(".DMG").attr("value");
-				originalUserHP = $(userChosen).find(".HP").attr("value");
-				userCharDMG = $(userChosen).find(".DMG").attr("value");
-				userCharHP = $(userChosen).find(".HP").attr("value");
-
-				$("#message").html("Please choose an opponent.");
-			} 
-				else {
-					enemyChosen = $(this).find(".player");
-					$("#enemy").html(enemyChosen);
-					enemy = true;
-					enemyChosenCount++;
-
-					if (enemyChosenCount === 1) {
-						$(".playerDiv").removeClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");
-						$(".playerDiv").addClass("col-xs-6 col-sm-6 col-md-6 col-lg-6");
-						$("#remainingOpponents").append("Remaining Opponents");
-					} 	else if (enemyChosenCount === 2) {
-							$(".playerDiv").removeClass("col-xs-6 col-sm-6 col-md-6 col-lg-6");
-							$(".playerDiv").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
-						}
-
-					enemyDMG = $(enemyChosen).find(".DMG").attr("value");
-					enemyHP = $(enemyChosen).find(".HP").attr("value");
-					originalEnemyHP = $(enemyChosen).find(".HP").attr("value");
-
-					$("#message").html("Click the dance button to begin the battle.")
-				}
-		} 
-
-	}); 
-
-}); 
-
-// resets game, setting userChar and enemy to false so new characters can be chosen
-// replaces userChosen and user HP and DMG values, used to reset after user wins or if reset before someone loses
-// replaces latest enemyChosen and enemy HP and DMG values if reset before someone loses
-$("#reset").on("click", function() {
-
-	userChar = false;
-	enemy = false;
-	enemyChosenCount = 0;
-	
-	$(".playerDiv").removeClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
-	$(".playerDiv").removeClass("col-xs-6 col-sm-6 col-md-6 col-lg-6");
-	$(".playerDiv").addClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");
-	$("#remainingOpponents").html("");
-
-	$(userChosen).find(".HP").html(originalUserHP);
-	$(userChosen).find(".DMG").html(originalUserDMG);
-	replacePlayer(userChosen);
-	$(enemyChosen).find(".HP").html(originalEnemyHP);
-	replacePlayer(enemyChosen);
-	$(".playerDiv").show();
-	$("#player1").show();
-	$("#player2").show();
-	$("#player3").show();
-	$("#player4").show();
-
-	enemyLosses = 0;
-
-	$("#message").html("Please choose a character.");
-
-}); 
+// variables used to animate Gifs
+var state = "still";
+var animate = "";
+var still = "";
 
 // replaces player to correct div location and hides character so can't be chosen  
 function replacePlayer(player) {
@@ -126,11 +50,6 @@ function replacePlayer(player) {
 			break;
 	}
 }
-
-// variables used to animate Gifs
-var state = "still";
-var animate = "";
-var still = "";
 
 // animates gifs
 function animateGif(playerImg) {
@@ -198,7 +117,38 @@ function game() {
 
 		} 
 	} 
-} 
+}  
+
+// resets game, setting userChar and enemy to false so new characters can be chosen
+// replaces userChosen and user HP and DMG values, used to reset after user wins or if reset before someone loses
+// replaces latest enemyChosen and enemy HP and DMG values if reset before someone loses
+$("#reset").on("click", function() {
+
+	userChar = false;
+	enemy = false;
+	enemyChosenCount = 0;
+	
+	$(".playerDiv").removeClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
+	$(".playerDiv").removeClass("col-xs-6 col-sm-6 col-md-6 col-lg-6");
+	$(".playerDiv").addClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");
+	$("#remainingOpponents").html("");
+
+	$(userChosen).find(".HP").html(originalUserHP);
+	$(userChosen).find(".DMG").html(originalUserDMG);
+	replacePlayer(userChosen);
+	$(enemyChosen).find(".HP").html(originalEnemyHP);
+	replacePlayer(enemyChosen);
+	$(".playerDiv").show();
+	$("#player1").show();
+	$("#player2").show();
+	$("#player3").show();
+	$("#player4").show();
+
+	enemyLosses = 0;
+
+	$("#message").html("Please choose a character.");
+
+}); 
 
 // animates images and plays music when click dance for 1.6s, then stills image and stops music
 $("#dance").on("click", function () {
@@ -225,7 +175,55 @@ $("#dance").on("click", function () {
 
 }); 
 
+// moves image, DMG and HP of player clicked to userChar or enemy location
+// gets DMG and HP values of player clicked and puts in userCharDMG and userCharHP to be modified during game 
+// puts in originalUserDMG and originalUserHP to retain original values for use during reset
+$(document).ready(function() {
 
+	$(".playerDiv").on("click", function () {
+		
+		$(this).hide();
+		
+		if (enemy === false) {
+			
+			if (userChar === false) {
+				userChosen = $(this).find(".player").attr("id");
+				$("#userChar").html(userChosen);
+				userChar = true;
+
+				originalUserDMG = $(userChosen).find(".DMG").attr("value");
+				originalUserHP = $(userChosen).find(".HP").attr("value");
+				userCharDMG = $(userChosen).find(".DMG").attr("value");
+				userCharHP = $(userChosen).find(".HP").attr("value");
+
+				$("#message").html("Please choose an opponent.");
+			} 
+				else {
+					enemyChosen = $(this).find(".player");
+					$("#enemy").html(enemyChosen);
+					enemy = true;
+					enemyChosenCount++;
+
+					if (enemyChosenCount === 1) {
+						$(".playerDiv").removeClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");
+						$(".playerDiv").addClass("col-xs-6 col-sm-6 col-md-6 col-lg-6");
+						$("#remainingOpponents").append("Remaining Opponents");
+					} 	else if (enemyChosenCount === 2) {
+							$(".playerDiv").removeClass("col-xs-6 col-sm-6 col-md-6 col-lg-6");
+							$(".playerDiv").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
+						}
+
+					enemyDMG = $(enemyChosen).find(".DMG").attr("value");
+					enemyHP = $(enemyChosen).find(".HP").attr("value");
+					originalEnemyHP = $(enemyChosen).find(".HP").attr("value");
+
+					$("#message").html("Click the dance button to begin the battle.")
+				}
+		} 
+
+	}); 
+
+});
 
 
 
