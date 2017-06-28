@@ -1,5 +1,6 @@
 # RPG-Game (Alien Dance Battle)
 
+An interactive game that challenges users to pick the right alien opponents based on their health points and damage power as they battle it out on the dance floor
 
 
 [Check Out Alien Dance Battle](https://mwong770.github.io/RPG-Game/)
@@ -34,43 +35,17 @@
 
 ## <a name="features"></a> :boom: Features
 
-* 
-
-   * When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
-
-   * The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
-
-   * The player chooses an opponent by clicking on an enemy's picture.
-
-   * Once the player selects an opponent, that enemy is moved to a `defender area`.
-
-   * The player will now be able to click the `attack` button.
-     * Whenever the player clicks `attack`, their character damages the defender. The opponent will lose `HP` (health points). These points are displayed at the bottom of the defender's picture. 
-     * The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their `HP`. These points are shown at the bottom of the player character's picture.
-
-3. The player will keep hitting the attack button in an effort to defeat their opponent.
-
-   * When the defender's `HP` is reduced to zero or below, remove the enemy from the `defender area`. The player character can now choose a new opponent.
-
-4. The player wins the game by defeating all enemy characters. The player loses the game the game if their character's `HP` falls to zero or below.
-
-##### Option 2 Game design notes
-
-* Each character in the game has 3 attributes: `Health Points`, `Attack Power` and `Counter Attack Power`.
-
-* Each time the player attacks, their character's Attack Power increases by its base Attack Power. 
-  * For example, if the base Attack Power is 6, each attack will increase the Attack Power by 6 (12, 18, 24, 30 and so on).
-* The enemy character only has `Counter Attack Power`. 
-
-  * Unlike the player's `Attack Points`, `Counter Attack Power` never changes.
-
-* The `Health Points`, `Attack Power` and `Counter Attack Power` of each character must differ.
-
-* No characters in the game can heal or recover Health Points. 
-
-  * A winning player must pick their characters wisely by first fighting an enemy with low `Counter Attack Power`. This will allow them to grind `Attack Power` and to take on enemies before they lose all of their `Health Points`. Healing options would mess with this dynamic.
-
-* Your players should be able to win and lose the game no matter what character they choose. The challenge should come from picking the right enemies, not choosing the strongest player.
+* Users choose 1 of 4 aliens, each having a different damage power and health points, to be their character in the dance battle by clicking on it
+* Users watch as their character moves to the dance floor below 'Your Character' and the remaining aliens reposition themselves
+* Users choose an opponent from 1 of 3 remaining aliens by clicking on it
+* Users watch as their opponent moves to the dance floor below 'Your Opponent'
+* Users click 'Dance' and watch the chosen aliens dance
+* Users watch as each dancer loses health points by an amount equal to their opponents' damage points, and the users' character increases damage power by it's base value (opponents can't increase damage power)
+* If both dancers still have health points, users can click 'Dance' again until one of the dancers loses all of their health points
+* If the opponent loses all health points, it'll stop being visible and the user will be prompted to choose another opponent from the remaining aliens
+* If users' health points fall to zero or below, they lose, and are prompted to press 'Reset' to play again, making all aliens visible
+* Users win when they have defeated all remaining aliens
+* Users can see all players health points and damage points throughout the game below the aliens' image
 
 
 ## <a name="developer"></a> :bust_in_silhouette: Developer

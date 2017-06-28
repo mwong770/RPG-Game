@@ -187,7 +187,6 @@ $(document).ready(function() {
 			
 			if (userChar === false) {
 				userChosen = $(this).find('.player');
-				// userChosen = $(this).find(".player").attr("id");
 				$("#userChar").html(userChosen);
 				userChar = true;
 
